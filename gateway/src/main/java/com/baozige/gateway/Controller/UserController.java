@@ -1,9 +1,7 @@
 package com.baozige.gateway.Controller;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("User")
@@ -13,5 +11,11 @@ public class UserController {
     @PostMapping("/add")
     public UserInfo addUserInfo (@RequestBody UserInfo userInfo){
 
+    }
+    @PutMapping("/auth/admin/change")
+    public UserInfo changeUserInfo(@RequestParam String name, HttpServletRequest request){
+        String header = request.getHeader(String token);
+      Sting userId =  header.getUserId(token);
+      return null;
     }
 }
