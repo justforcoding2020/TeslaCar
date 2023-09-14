@@ -18,4 +18,10 @@ public class UserController {
       Sting userId =  header.getUserId(token);
       return null;
     }
+    @DeleteMapping ("/auth/admin/remove")
+    public UserInfo changeUserInfo(@RequestParam String name, HttpServletRequest request){
+        String header = request.getHeader(String token);
+        Sting userId =  header.getUserId(token);
+        return null;
+    }
 }
